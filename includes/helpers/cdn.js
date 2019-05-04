@@ -17,6 +17,7 @@ const font_providers = {
 };
 
 const icon_providers = {
+    bootcss: 'https://cdn.bootcss.com/font-awesome/5.4.1/css/all.css',
     fontawesome: 'https://use.fontawesome.com/releases/v5.4.1/css/all.css'
 };
 

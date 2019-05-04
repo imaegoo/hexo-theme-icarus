@@ -12,7 +12,7 @@ $(document).ready(function () {
         base: {
             classname: 'card has-text-centered',
             left: '',
-            width: 64,
+            width: 40,
             bottom: bottomMargin,
             'border-radius': 4
         }

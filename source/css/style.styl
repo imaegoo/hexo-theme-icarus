@@ -444,3 +444,31 @@ figure.highlight
             border: none
     .file
         all: initial
+
+/* ---------------------------------
+*        www.imaegoo.com
+* --------------------------------- */
+body
+    background-image: url("/images/bg.jpg")
+.card
+    &.card-transparent
+        .level-start,
+        .level-end
+            overflow: hidden
+.footer-logo
+    img
+        max-height: 2rem
+.navbar-main
+    .navbar-item
+        &:hover
+            color: inherit
+            background-color: #f2f2f2
+        &.is-active
+            color: inherit
+            font-weight: bold
+    @media screen and (min-width: screen-desktop)
+        .navbar-start
+            margin-left: 2em
+.article
+    .content
+        overflow: auto
