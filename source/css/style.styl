@@ -451,7 +451,7 @@ figure.highlight
 
 // Background image
 body, .navbar .blur-bg, .footer .blur-bg
-    background-image: url("/images/bg3.jpg")
+    background-image: url("/images/bg4.jpg")
     background-size: cover
     background-repeat: no-repeat
     background-attachment: fixed
@@ -485,7 +485,7 @@ body .navbar, body .footer
     .navbar-item
         &:hover
             color: inherit
-            background-color: rgba(180, 225, 228, 0.4)
+            background-color: rgba(254, 247, 219, 0.5)
         &.is-active
             color: inherit
             font-weight: bold
@@ -501,7 +501,10 @@ body .navbar, body .footer
             overflow: hidden
 @media screen and (min-width: screen-tablet)
     .card
+        transition: background-color 0.5s ease
         background-color: rgba(255,255,255,0.9)
+        &:hover
+            background-color: rgba(255,255,255,1)
 
 // Article horizontal scroll bar
 .article
