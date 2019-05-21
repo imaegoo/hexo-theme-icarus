@@ -5,6 +5,10 @@ screen-tablet = 769px
 screen-desktop = 1088px
 screen-widescreen = 1280px
 screen-fullhd = 1472px
+primary-color = rgb(100,100,200)
+primary-color-hover = rgb(90,90,180)
+primary-color-active = rgb(80,80,160)
+primary-color-light = rgba(100,100,200,0.8)
 
 /* ---------------------------------
  *       Override CSS Framework
@@ -496,9 +500,12 @@ body .navbar, body .footer
 // Card fixes
 .card
     &.card-transparent
+        background-color: transparent !important
         .level-start,
         .level-end
             overflow: hidden
+    .button
+        background-color: transparent
 @media screen and (min-width: screen-tablet)
     .card
         transition: background-color 0.5s ease
@@ -515,7 +522,7 @@ body .navbar, body .footer
 .footer-logo
     img
         max-height: 2rem
-.footer a
+.footer a:not(.button)
     color: inherit
     &:hover
         text-decoration: underline
@@ -523,7 +530,28 @@ body .navbar, body .footer
 // Selection
 ::selection
     color: white
-    background-color: rgba(100,100,200,0.8)
+    background-color: primary-color-light
 ::-moz-selection
     color: white
-    background-color: rgba(100,100,200,0.8)
+    background-color: primary-color-light
+
+.ins-section-container .ins-section .ins-search-item:hover,
+.ins-section-container .ins-section .ins-search-item.active
+    background-color: primary-color
+
+.button.is-link
+    background-color: primary-color
+
+.button.is-link:hover, .button.is-link.is-hovered
+    background-color: primary-color-hover
+
+.button.is-link:active, .button.is-link.is-active
+    background-color: primary-color-active
+
+.searchbox .searchbox-container .searchbox-input-wrapper .searchbox-close:hover
+    color: primary-color-hover
+
+.has-link-grey,
+.has-link-black-ter
+    &:hover
+        color: primary-color !important
