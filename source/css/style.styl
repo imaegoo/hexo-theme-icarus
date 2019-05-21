@@ -535,6 +535,10 @@ body .navbar, body .footer
     color: white
     background-color: primary-color-light
 
+// Colors
+a
+    color: primary-color
+
 .ins-section-container .ins-section .ins-search-item:hover,
 .ins-section-container .ins-section .ins-search-item.active
     background-color: primary-color
@@ -542,16 +546,20 @@ body .navbar, body .footer
 .button.is-link
     background-color: primary-color
 
+.has-link-grey,
+.has-link-black-ter
+    &:hover
+        color: primary-color !important
+
+.searchbox .searchbox-container .searchbox-input-wrapper .searchbox-close:hover
+    color: primary-color-hover
+
 .button.is-link:hover, .button.is-link.is-hovered
     background-color: primary-color-hover
 
 .button.is-link:active, .button.is-link.is-active
     background-color: primary-color-active
 
-.searchbox .searchbox-container .searchbox-input-wrapper .searchbox-close:hover
-    color: primary-color-hover
-
-.has-link-grey,
-.has-link-black-ter
-    &:hover
-        color: primary-color !important
+.pagination-link.is-current
+    background-color: primary-color
+    border-color: primary-color-active
