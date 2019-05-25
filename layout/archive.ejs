@@ -8,7 +8,7 @@
         <div class="timeline">
         <% posts.each(post => { %>
             <article class="media">
-                <% if (has_thumbnail(post)) { %>
+                <% if (!has_config('article.thumbnail') || get_config('article.thumbnail') !== false) { %>
                 <a href="<%- url_for((post.link?post.link:post.path)) %>" class="media-left">
                     <p class="image is-64x64">
                         <img class="thumbnail" src="<%= get_thumbnail(post) %>" alt="<%= post.title %>">
