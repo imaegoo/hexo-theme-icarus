@@ -6,6 +6,7 @@
         </h3>
         <% site.posts.sort('date', -1).limit(5).each(post => { %>
         <article class="media">
+            <!--
             <% if (!has_config('article.thumbnail') || get_config('article.thumbnail') !== false) { %>
             <a href="<%- url_for((post.link?post.link:post.path)) %>" class="media-left">
                 <p class="image is-64x64">
@@ -13,6 +14,7 @@
                 </p>
             </a>
             <% } %>
+            -->
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time></div>
