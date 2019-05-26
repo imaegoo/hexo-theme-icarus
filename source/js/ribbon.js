@@ -188,6 +188,7 @@
                 this._canvas.style["top"] = "0";
                 this._canvas.style["width"] = "100%";
                 this._canvas.style["height"] = "100%";
+                this._canvas.style["pointer-events"] = "none";
                 this._canvas.id = "bgCanvas";
                 this._onResize();
 

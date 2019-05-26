@@ -4,7 +4,7 @@
     <%- partial('common/head') %>
 </head>
 <body class="is-<%= column_count() %>-column">
-    <script type="text/javascript" src="/js/ribbon.js"></script>
+    <script type="text/javascript" src="/js/ribbon.min.js"></script>
     <%- partial('common/navbar', { page }) %>
     <% function main_column_class() {
         switch (column_count()) {
