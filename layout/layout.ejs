@@ -3,8 +3,10 @@
 <head>
     <%- partial('common/head') %>
 </head>
-<body class="is-<%= column_count() %>-column">
-    <script type="text/javascript" src="/js/ribbon.min.js"></script>
+<body class="is-<%= column_count() %>-column night">
+    <canvas id="universe"></canvas>
+    <script type="text/javascript" src="/js/universe.js"></script>
+    <!-- <script type="text/javascript" src="/js/ribbon.min.js"></script> -->
     <%- partial('common/navbar', { page }) %>
     <% function main_column_class() {
         switch (column_count()) {
