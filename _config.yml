@@ -213,6 +213,6 @@ providers:
     # Name or URL of the JavaScript and/or stylesheet CDN provider
     cdn: cdnjs
     # Name or URL of the webfont CDN provider
-    fontcdn: google
+    fontcdn: loli
     # Name or URL of the webfont Icon CDN provider
-    iconcdn: bootcss
+    iconcdn: loli

@@ -13,11 +13,13 @@ const cdn_providers = {
 };
 
 const font_providers = {
-    google: 'https://fonts.googleapis.com/${ type }?family=${ fontname }'
+    google: 'https://fonts.googleapis.com/${ type }?family=${ fontname }',
+    loli: 'https://fonts.loli.net/${ type }?family=${ fontname }'
 };
 
 const icon_providers = {
     bootcss: 'https://cdn.bootcss.com/font-awesome/5.4.1/css/all.css',
+    loli: 'https://cdnjs.loli.net/ajax/libs/font-awesome/5.4.1/css/all.css',
     fontawesome: 'https://use.fontawesome.com/releases/v5.4.1/css/all.css'
 };
 
