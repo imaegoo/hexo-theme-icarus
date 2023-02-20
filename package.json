@@ -27,7 +27,7 @@
     "eslint-plugin-react": "^7.17.0"
   },
   "dependencies": {
-    "bulma-stylus": "0.8.0",
+    "bulma-stylus": "0.9.1",
     "deepmerge": "^4.2.2",
     "hexo": "^6.0.0",
     "hexo-component-inferno": "^2.0.2",
