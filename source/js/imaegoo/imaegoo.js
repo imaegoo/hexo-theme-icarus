@@ -41,7 +41,6 @@
   $(window).resize(fixLeftColumnTop);
 
   function loadTwikooNewComment() {
-    var twikooOrgPaths = ['/', '/api.html', '/cms.html', '/configuration.html', '/faq.html', '/link.html', '/quick-start.html'];
     var twikooNewEl = document.getElementsByClassName('twikoo-new-container');
     if (twikooNewEl.length === 0) return;
     twikoo.getRecentComments({
@@ -53,7 +52,6 @@
       for (var idx1 = 0; idx1 < res.length; idx1++) {
         var item = res[idx1];
         if (!item.commentText.trim()) continue
-        if (twikooOrgPaths.indexOf(item.url) !== -1) item.url = 'https://twikoo.js.org' + item.url;
         innerHTML += '<article class="media"><div class="media-content">'
           + '<p class="title twikoo-new-content"><a href="' + item.url + '#' + item.id + '">' + changeContent(item.commentText) + '</a></p>'
           + '<p class="date">' + item.nick + ' / ' + item.relativeTime + '</p>'
