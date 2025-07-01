@@ -99,7 +99,7 @@
     dialogEl.style.padding = '20px 20px 16px';
     dialogEl.style.overflowWrap = 'anywhere';
     var descEl = document.createElement('div');
-    descEl.innerText = '即将访问虹墨空间站外部的第三方网址: ' + href;
+    descEl.innerText = '您即将离开虹墨空间站，打开第三方页面: ' + href;
     var btnGroupEl = document.createElement('div');
     btnGroupEl.style.marginTop = '10px';
     btnGroupEl.style.textAlign = 'right';
@@ -110,7 +110,7 @@
       document.body.removeChild(maskEl);
     });
     var btnConfirmEl = document.createElement('button');
-    btnConfirmEl.innerText = '允许';
+    btnConfirmEl.innerText = '继续访问';
     btnConfirmEl.classList.add('button', 'is-success');
     btnConfirmEl.style.marginLeft = '10px';
     btnConfirmEl.addEventListener('click', function () {
