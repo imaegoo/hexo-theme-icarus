@@ -87,11 +87,8 @@
     var href = e.currentTarget.getAttribute('href');
     var maskEl = document.createElement('div');
     maskEl.style.position = 'fixed';
+    maskEl.style.inset = '0';
     maskEl.style.zIndex = '9000';
-    maskEl.style.top = '0';
-    maskEl.style.right = '0';
-    maskEl.style.left = '0';
-    maskEl.style.bottom = '0';
     maskEl.style.background = 'rgba(0,0,0,.6)';
     var dialogEl = document.createElement('div');
     dialogEl.style.position = 'absolute';
@@ -135,7 +132,7 @@
     for (var linkIndex = 0; linkIndex < links.length; linkIndex++) {
       var link = links[linkIndex];
       var href = link.getAttribute('href');
-      if (href.startsWith('http') && !href.startsWith('https://www.imaegoo.com')) {
+      if (href && href.startsWith('http') && !href.startsWith('https://www.imaegoo.com')) {
         link.removeEventListener('click', onThirdPartyLinkClick); 
         link.addEventListener('click', onThirdPartyLinkClick);
       }
