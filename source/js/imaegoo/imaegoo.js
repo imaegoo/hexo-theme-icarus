@@ -80,4 +80,67 @@
   }
 
   loadTwikooNewComment();
+
+  // 即将访问虹墨空间站外部的第三方网址
+  function onThirdPartyLinkClick (e) {
+    e.preventDefault();
+    var href = e.currentTarget.getAttribute('href');
+    var maskEl = document.createElement('div');
+    maskEl.style.position = 'fixed';
+    maskEl.style.zIndex = '9000';
+    maskEl.style.top = '0';
+    maskEl.style.right = '0';
+    maskEl.style.left = '0';
+    maskEl.style.bottom = '0';
+    maskEl.style.background = 'rgba(0,0,0,.6)';
+    var dialogEl = document.createElement('div');
+    dialogEl.style.position = 'absolute';
+    dialogEl.style.top = '50%';
+    dialogEl.style.left = '50%';
+    dialogEl.style.transform = 'translate(-50%,-50%)';
+    dialogEl.style.width = '300px';
+    dialogEl.style.background = '#fff';
+    dialogEl.style.borderRadius = '10px';
+    dialogEl.style.padding = '20px 20px 16px';
+    dialogEl.style.overflowWrap = 'anywhere';
+    var descEl = document.createElement('div');
+    descEl.innerText = '即将访问虹墨空间站外部的第三方网址: ' + href;
+    var btnGroupEl = document.createElement('div');
+    btnGroupEl.style.marginTop = '10px';
+    btnGroupEl.style.textAlign = 'right';
+    var btnCancelEl = document.createElement('button');
+    btnCancelEl.innerText = '取消';
+    btnCancelEl.classList.add('button');
+    btnCancelEl.addEventListener('click', function () {
+      document.body.removeChild(maskEl);
+    });
+    var btnConfirmEl = document.createElement('button');
+    btnConfirmEl.innerText = '允许';
+    btnConfirmEl.classList.add('button', 'is-success');
+    btnConfirmEl.style.marginLeft = '10px';
+    btnConfirmEl.addEventListener('click', function () {
+      document.body.removeChild(maskEl);
+      window.open(href, '_blank');
+    });
+    btnGroupEl.appendChild(btnCancelEl);
+    btnGroupEl.appendChild(btnConfirmEl);
+    dialogEl.appendChild(descEl);
+    dialogEl.appendChild(btnGroupEl);
+    maskEl.appendChild(dialogEl);
+    document.body.appendChild(maskEl);
+  }
+
+  window.handleThirdPartyLink = function (scope) {
+    var links = scope.querySelectorAll('a');
+    for (var linkIndex = 0; linkIndex < links.length; linkIndex++) {
+      var link = links[linkIndex];
+      var href = link.getAttribute('href');
+      if (href.startsWith('http') && !href.startsWith('https://www.imaegoo.com')) {
+        link.removeEventListener('click', onThirdPartyLinkClick); 
+        link.addEventListener('click', onThirdPartyLinkClick);
+      }
+    }
+  }
+
+  handleThirdPartyLink(document.body);
 }(jQuery));

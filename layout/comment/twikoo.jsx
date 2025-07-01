@@ -45,6 +45,7 @@ class Twikoo extends Component {
                     });
                   }
                 }
+                handleThirdPartyLink && handleThirdPartyLink(commentItem);
               }
             }
         });`;
