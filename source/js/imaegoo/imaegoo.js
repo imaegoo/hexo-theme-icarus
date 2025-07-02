@@ -93,22 +93,30 @@
     dialogEl.style.top = '50%';
     dialogEl.style.left = '50%';
     dialogEl.style.transform = 'translate(-50%,-50%)';
-    dialogEl.style.width = '300px';
+    dialogEl.style.width = '310px';
     dialogEl.style.background = '#fff';
     dialogEl.style.borderRadius = '10px';
-    dialogEl.style.padding = '20px 20px 16px';
     dialogEl.style.overflowWrap = 'anywhere';
+    dialogEl.style.overflow = 'hidden';
+    dialogEl.style.boxShadow = '0 4px 10px rgba(0,0,0,.05)';
+    var bannerEl = document.createElement('img');
+    bannerEl.src = '/img/small-banner.webp';
+    bannerEl.style.width = '100%';
+    bannerEl.style.height = '91px';
+    bannerEl.style.userSelect = 'none';
     var descEl = document.createElement('div');
-    descEl.innerText = '您即将离开虹墨空间站，打开第三方页面: ' + href;
+    descEl.style.margin = '10px 20px';
+    descEl.innerText = '您即将离开虹墨空间站，打开第三方页面： ' + href;
     var btnGroupEl = document.createElement('div');
     btnGroupEl.style.marginTop = '10px';
     btnGroupEl.style.textAlign = 'right';
+    btnGroupEl.style.margin = '0 20px 16px';
     var btnCancelEl = document.createElement('button');
     btnCancelEl.innerText = '取消';
     btnCancelEl.classList.add('button');
     btnCancelEl.addEventListener('click', function () {
       document.body.removeChild(maskEl);
-    });
+    }, { once: true });
     var btnConfirmEl = document.createElement('button');
     btnConfirmEl.innerText = '继续访问';
     btnConfirmEl.classList.add('button', 'is-success');
@@ -116,13 +124,22 @@
     btnConfirmEl.addEventListener('click', function () {
       document.body.removeChild(maskEl);
       window.open(href, '_blank');
-    });
+    }, { once: true });
     btnGroupEl.appendChild(btnCancelEl);
     btnGroupEl.appendChild(btnConfirmEl);
+    dialogEl.appendChild(bannerEl);
     dialogEl.appendChild(descEl);
     dialogEl.appendChild(btnGroupEl);
     maskEl.appendChild(dialogEl);
     document.body.appendChild(maskEl);
+    var escToClose = function (e) {
+      if (e.key === 'Escape') {
+        btnCancelEl.click();
+        document.body.removeEventListener('keydown', escToClose);
+      }
+    }
+    document.body.addEventListener('keydown', escToClose);
+    btnConfirmEl.focus();
   }
 
   window.handleThirdPartyLink = function (scope) {
