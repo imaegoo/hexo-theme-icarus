@@ -130,7 +130,7 @@
     for (var linkIndex = 0; linkIndex < links.length; linkIndex++) {
       var link = links[linkIndex];
       var href = link.getAttribute('href');
-      if (href && href.startsWith('http') && !href.startsWith('https://www.imaegoo.com')) {
+      if (href && href.startsWith('http') && !/^https?:\/\/.*\.imaegoo\.com/.test(href)) {
         link.removeEventListener('click', onThirdPartyLinkClick); 
         link.addEventListener('click', onThirdPartyLinkClick);
       }
