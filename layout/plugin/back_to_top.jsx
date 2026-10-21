@@ -6,9 +6,9 @@ class BackToTop extends Component {
         const { title, jsUrl } = this.props;
 
         return <Fragment>
-            <button type="button" id="back-to-top" title={title} aria-label={title}>
-                <i class="fas fa-chevron-up" aria-hidden="true"></i>
-            </button>
+            <a id="back-to-top" title={title} href="javascript:;">
+                <i class="fas fa-chevron-up"></i>
+            </a>
             <script data-pjax src={jsUrl} defer></script>
         </Fragment>;
 
